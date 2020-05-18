@@ -1,0 +1,395 @@
+/*#region Test Codes Only*/
+body {
+  margin-top: 15px;
+  font-family: shabnam;
+}
+
+/*#endregion*/
+body {
+  direction: rtl;
+}
+
+body.edit-mode * {
+  outline: none;
+}
+
+body.edit-mode .report__container {
+  min-height: 200px;
+  border: 1px dashed #c5c5c5;
+  position: relative;
+  margin: 20px 0 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body.edit-mode .report__container:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+body.edit-mode .grid__container .row {
+  border: 1px dashed #707070;
+  min-height: 200px;
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 70px;
+  padding: 15px 0;
+  border-radius: 5px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+body.edit-mode .reports__container {
+  margin-bottom: 30px;
+}
+
+body.edit-mode a {
+  text-decoration: none;
+}
+
+body.edit-mode .grid-controllers__container a:last-child {
+  display: inline-block;
+}
+
+body.edit-mode .add-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body.edit-mode div[class^="col-"].gu-transit .report__container {
+  border: 2px dashed #2d42fc;
+  background-color: #2d42fc;
+}
+
+body.edit-mode .col-settings {
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 10;
+  font-size: 20px;
+}
+
+.handle {
+  width: 20px;
+  height: 20px;
+  background-color: #ff5656;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  cursor: move;
+  position: absolute;
+}
+
+.add-row {
+  width: 100%;
+  padding: 0 0 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+.add-row a {
+  padding: 10px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.add-row a span {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.row-controllers__container {
+  position: absolute;
+  top: -40px;
+  right: -1px;
+  border: 1px dashed #707070;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: none;
+  background-color: white;
+  padding: 8px 10px 5px 10px;
+}
+
+.row-controllers__container a span {
+  font-size: 20px;
+}
+
+.row-controllers__container a span.icon-x-circle {
+  color: #ff7d7d;
+}
+
+.row-controllers__container a span.icon-chevron-down {
+  color: #70a8fd;
+}
+
+.row-controllers__container a span.icon-chevron-up {
+  color: #70a8fd;
+}
+
+.row-controllers__container a span.icon-settings {
+  color: #079c77;
+  margin-right: 3px;
+  font-size: 19px;
+}
+
+.grid-controllers__container {
+  margin-bottom: 15px;
+}
+
+.grid-controllers__container a:last-of-type {
+  display: none;
+}
+
+.row-creator__container {
+  position: fixed;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.185);
+  -webkit-backdrop-filter: blur(4px) saturate(150%);
+          backdrop-filter: blur(4px) saturate(150%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all ease 400ms;
+  transition: all ease 400ms;
+}
+
+.row-creator__container.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.row-creator__container.open .row-creator-holder {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.row-creator__container .row-creator-holder {
+  width: 50%;
+  height: 50%;
+  background-color: white;
+  border-radius: 5px;
+  position: relative;
+  padding: 10px 10px 10px 10px;
+  -webkit-transition: all ease 600ms;
+  transition: all ease 600ms;
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+}
+
+.row-creator__container .row-creator-holder .header {
+  top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px dashed #4e4e4e;
+  padding-bottom: 3px;
+  margin-bottom: 13px;
+}
+
+.row-creator__container .row-creator-holder .header .close-button {
+  font-size: 20px;
+  color: #ff6868;
+}
+
+.row-creator__container .row-creator-holder .header .title {
+  color: #313131;
+  font-weight: bold;
+}
+
+.row-creator__container .row-creator-holder .help-text {
+  text-align: justify;
+  color: #414141;
+}
+
+.row-creator__container .row-creator-holder .grid-selector {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 50px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.row-creator__container .row-creator-holder .grid-selector button {
+  margin-top: 30px;
+}
+
+.row-creator__container .row-creator-holder .grid-selector select {
+  width: 30%;
+  padding: 9px 13px;
+  border-radius: 5px;
+  border: 1px solid #828282;
+}
+
+.report-selector__container {
+  position: fixed;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.185);
+  -webkit-backdrop-filter: blur(4px) saturate(150%);
+          backdrop-filter: blur(4px) saturate(150%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all ease 400ms;
+  transition: all ease 400ms;
+}
+
+.report-selector__container.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.report-selector__container.open .report-selector-holder {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.report-selector__container .report-selector-holder {
+  width: 50%;
+  height: 50%;
+  background-color: white;
+  border-radius: 5px;
+  position: relative;
+  padding: 10px 10px 10px 10px;
+  -webkit-transition: all ease 600ms;
+  transition: all ease 600ms;
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+}
+
+.report-selector__container .report-selector-holder .header {
+  top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px dashed #4e4e4e;
+  padding-bottom: 3px;
+  margin-bottom: 13px;
+}
+
+.report-selector__container .report-selector-holder .header .close-button {
+  font-size: 20px;
+  color: #ff6868;
+}
+
+.report-selector__container .report-selector-holder .header .title {
+  color: #313131;
+  font-weight: bold;
+}
+
+.report-selector__container .report-selector-holder .help-text {
+  text-align: justify;
+  color: #414141;
+}
+
+.report-selector__container .report-selector-holder .grid-selector {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 50px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.report-selector__container .report-selector-holder .grid-selector button {
+  margin-top: 30px;
+}
+
+.report-selector__container .report-selector-holder .grid-selector select {
+  width: 40%;
+  padding: 9px 13px;
+  border-radius: 5px;
+  border: 1px solid #828282;
+}
+
+.col-settings {
+  display: none;
+}
+
+.report-selector-value {
+  margin-top: 15px;
+}
+/*# sourceMappingURL=styles.css.map */

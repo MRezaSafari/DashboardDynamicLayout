@@ -1,0 +1,32 @@
+[
+	{
+		"title": "رنگ زمینه",
+		"element": "#TemplateContainer",
+		"type": "BACKGROUND_COLOR"
+	},
+	{
+		"title": "تصویر سمت چپ",
+		"element": "#Image",
+		"type": "IMAGE"
+	},
+	{
+		"title": "عنوان",
+		"element": "#Title1",
+		"type": "TEXT"
+	},
+	{
+		"title": "توضیحات",
+		"element": "#Description",
+		"type": "TEXT"
+	},
+	{
+		"title": "کلید اطلاعات بیشتر",
+		"element": "#MoreButton",
+		"type": "BUTTON"
+	},
+	{
+		"title": "آدرس کلید اطلاعات بیشتر",
+		"element": "#MoreButton",
+		"type": "LINK"
+	}
+]

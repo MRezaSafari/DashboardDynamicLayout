@@ -1,0 +1,43 @@
+<style>
+	#BaseContainer {
+		width: 100%;
+		background-color: rgb(236, 236, 236);
+		padding: 15px;
+		box-sizing: border-box;
+	}
+	#TextContainer {
+		float: right;
+		width: 70%;
+	}
+	#ImageContainer {
+		float: left;
+		width: 30%;
+		text-align: left;
+	}
+	.clearfix::after {
+		content: '';
+		clear: both;
+		display: table;
+	}
+</style>
+
+<div id="BaseContainer">
+	<div id="TextContainer">
+		<h1 id="Title1">بلاک جدید</h1>
+		<p>
+			لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از
+			طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+			که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با
+			هدف بهبود ابزارهای کاربردی می باشد
+		</p>
+	</div>
+	<div id="ImageContainer">
+		<img
+			src="https://picsum.photos/id/214/200/150"
+			width="200"
+			height="150"
+			alt=""
+		/>
+	</div>
+	<div class="clearfix"></div>
+</div>
