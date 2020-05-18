@@ -544,10 +544,15 @@ function generateRow() {
 
 	row.appendChild(reportsContainer);
 
-	let rows = document.querySelectorAll(".grid__container .row");
-	let lastRow = rows[rows.length - 1];
+	let rowsContainer = document.querySelector(".grid__container");
+	let rows = rowsContainer.querySelectorAll(".row");
 
-	lastRow.after(row);
+	if (rows.length > 0) {
+		let lastRow = rows[rows.length - 1];
+		lastRow.after(row);
+	} else {
+		rowsContainer.appendChild(row);
+	}
 
 	initiateDragula();
 	bindEvents();
@@ -615,5 +620,3 @@ document.querySelector(".save-changes").addEventListener("click", function (e) {
 		alert("تغییرات شما ذخیره شد.");
 	});
 });
-
-document.addEventListener("DOMContentLoaded", function () {}, false);
