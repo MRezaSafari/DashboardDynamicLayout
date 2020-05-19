@@ -597,16 +597,21 @@ document.querySelector(".save-changes").addEventListener("click", function (e) {
 		childs.forEach((child) => {
 			let reportBox = child.querySelector(`div[data-box-id]`);
 
-			if (reportBox === null) return;
+			if (reportBox === null) {
+				colsList.push({
+					column: child.classList.toString(),
+					reportId: null,
+				});
+			} else {
+				let reportId = reportBox.getAttribute("data-box-id");
 
-			let reportId = reportBox.getAttribute("data-box-id");
+				if (reportId === null) return;
 
-			if (reportId === null) return;
-
-			colsList.push({
-				column: child.classList.toString(),
-				reportId: reportId,
-			});
+				colsList.push({
+					column: child.classList.toString(),
+					reportId: reportId,
+				});
+			}
 		});
 
 		if (colsList.length > 0) fullGrid.push(colsList);
