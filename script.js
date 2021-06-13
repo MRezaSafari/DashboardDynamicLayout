@@ -6,6 +6,8 @@ const _axios = axios.create({
 	baseURL: "http://localhost:9000/",
 });
 
+
+//drag and drop functionality
 function initiateDragula() {
 	let rows = document.querySelectorAll(".grid__container .row");
 
@@ -59,7 +61,7 @@ function bindEvents() {
 
 			let parent = this.parentNode.parentNode;
 
-			if (confirm("آیا مطمئن هستید میخواهید این ردیف را حذف کنید ؟"))
+			if (confirm("Are you sure you want to remove this row?"))
 				parent.remove();
 		});
 	});
@@ -150,7 +152,7 @@ function bindEvents() {
 			}
 
 			document.querySelector(".grid-value-selector").selectedIndex = finalValue;
-			document.querySelector("#CreateRow").innerText = "تغییر ستون ها";
+			document.querySelector("#CreateRow").innerText = "Change Columns";
 			rowEditMode = true;
 			rowEditRef = parent;
 			toggleRowCreator(true);
@@ -173,7 +175,7 @@ function toggleRowCreator(state) {
 	} else {
 		rowCreator.classList.remove("open");
 		setTimeout(() => {
-			document.querySelector("#CreateRow").innerText = "افزودن";
+			document.querySelector("#CreateRow").innerText = "Insert";
 			document.querySelector(".grid-value-selector").selectedIndex = 0;
 		}, 800);
 	}
@@ -194,7 +196,7 @@ function injectRowCreatorButton() {
 	buttonContainer.className = "add-row";
 	buttonContainer.innerHTML = `<a href="#" class="btn btn-danger">
 									<span class="icon-plus-circle"></span>
-									افزودن ردیف جدید</a
+									Add New Row</a
 								>`;
 
 	document.querySelector(".grid__container").after(buttonContainer);
@@ -226,7 +228,7 @@ function injectRowCreator() {
 
 	let title = document.createElement("p");
 	title.className = "title";
-	title.innerText = "افزودن ردیف جدید";
+	title.innerText = "Add new row";
 
 	header.appendChild(closeButton);
 	header.appendChild(title);
@@ -234,7 +236,7 @@ function injectRowCreator() {
 	let helpText = document.createElement("p");
 	helpText.className = "help-text";
 	helpText.innerText =
-		"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است";
+		"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, inventore reiciendis? Distinctio illum cum exercitationem quo nihil perspiciatis mollitia eos! Quam quia nihil vitae quae voluptatum eius provident nam blanditiis.";
 
 	let dropdownContainer = document.createElement("div");
 	dropdownContainer.className = "grid-selector";
@@ -254,7 +256,7 @@ function injectRowCreator() {
 	let createButton = document.createElement("button");
 	createButton.id = "CreateRow";
 	createButton.className = "btn btn-success";
-	createButton.innerText = "افزودن";
+	createButton.innerText = "Add";
 	createButton.addEventListener("click", generateRow);
 
 	dropdownContainer.appendChild(dropdown);
@@ -295,7 +297,7 @@ function injectReportSelector() {
 
 	let title = document.createElement("p");
 	title.className = "title";
-	title.innerText = "انتخاب گزارش";
+	title.innerText = "Select Report";
 
 	header.appendChild(closeButton);
 	header.appendChild(title);
@@ -303,7 +305,7 @@ function injectReportSelector() {
 	let helpText = document.createElement("p");
 	helpText.className = "help-text";
 	helpText.innerText =
-		"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است";
+		"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, inventore reiciendis? Distinctio illum cum exercitationem quo nihil perspiciatis mollitia eos! Quam quia nihil vitae quae voluptatum eius provident nam blanditiis.";
 
 	let dropdownContainer = document.createElement("div");
 	dropdownContainer.className = "grid-selector";
@@ -355,7 +357,7 @@ function injectReportSelector() {
 	let createButton = document.createElement("button");
 	createButton.id = "CreateRow";
 	createButton.className = "btn btn-success";
-	createButton.innerText = "انتخاب گزارش";
+	createButton.innerText = "Select Report";
 	createButton.addEventListener("click", loadReport);
 
 	dropdownContainer.appendChild(groupSelector);
@@ -384,14 +386,14 @@ function loadReport() {
 	let reportSelector = document.querySelector(".report-selector-value");
 
 	if (reportSelector.selectedIndex === -1) {
-		alert("لطفا یک گزارش را انتخاب نمایید");
+		alert("Please select a report.");
 		return;
 	}
 
 	let reportId = reportSelector.options[reportSelector.selectedIndex].value;
 
 	if (reportId === "-1") {
-		alert("لطفا یک گزارش را انتخاب نمایید");
+		alert("Please select a report.");
 		return;
 	}
 
@@ -622,6 +624,6 @@ document.querySelector(".save-changes").addEventListener("click", function (e) {
 		url: "/save",
 		data: fullGrid,
 	}).then(function (res) {
-		alert("تغییرات شما ذخیره شد.");
+		alert("Changes has been saved.");
 	});
 });

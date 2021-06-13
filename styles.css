@@ -1,13 +1,8 @@
 /*#region Test Codes Only*/
 body {
   margin-top: 15px;
-  font-family: shabnam;
 }
-
 /*#endregion*/
-body {
-  direction: rtl;
-}
 
 body.edit-mode * {
   outline: none;
@@ -22,11 +17,11 @@ body.edit-mode .report__container {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 body.edit-mode .report__container:after {
@@ -92,11 +87,11 @@ body.edit-mode .col-settings {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: white;
   cursor: move;
   position: absolute;
@@ -109,11 +104,11 @@ body.edit-mode .col-settings {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: none;
 }
 
@@ -123,22 +118,22 @@ body.edit-mode .col-settings {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .add-row a span {
   font-size: 20px;
-  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .row-controllers__container {
   position: absolute;
-  top: -40px;
-  right: -1px;
+  top: -38px;
+  left: -1px;
   border: 1px dashed #707070;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -186,16 +181,16 @@ body.edit-mode .col-settings {
   top: 0;
   background-color: rgba(0, 0, 0, 0.185);
   -webkit-backdrop-filter: blur(4px) saturate(150%);
-          backdrop-filter: blur(4px) saturate(150%);
+  backdrop-filter: blur(4px) saturate(150%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all ease 400ms;
@@ -209,7 +204,7 @@ body.edit-mode .col-settings {
 
 .row-creator__container.open .row-creator-holder {
   -webkit-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
 }
 
 .row-creator__container .row-creator-holder {
@@ -222,7 +217,7 @@ body.edit-mode .col-settings {
   -webkit-transition: all ease 600ms;
   transition: all ease 600ms;
   -webkit-transform: translateY(-30px);
-          transform: translateY(-30px);
+  transform: translateY(-30px);
 }
 
 .row-creator__container .row-creator-holder .header {
@@ -231,8 +226,8 @@ body.edit-mode .col-settings {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border-bottom: 1px dashed #4e4e4e;
   padding-bottom: 3px;
   margin-bottom: 13px;
@@ -258,16 +253,16 @@ body.edit-mode .col-settings {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-top: 50px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .row-creator__container .row-creator-holder .grid-selector button {
@@ -290,16 +285,16 @@ body.edit-mode .col-settings {
   top: 0;
   background-color: rgba(0, 0, 0, 0.185);
   -webkit-backdrop-filter: blur(4px) saturate(150%);
-          backdrop-filter: blur(4px) saturate(150%);
+  backdrop-filter: blur(4px) saturate(150%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all ease 400ms;
@@ -313,7 +308,7 @@ body.edit-mode .col-settings {
 
 .report-selector__container.open .report-selector-holder {
   -webkit-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
 }
 
 .report-selector__container .report-selector-holder {
@@ -326,7 +321,7 @@ body.edit-mode .col-settings {
   -webkit-transition: all ease 600ms;
   transition: all ease 600ms;
   -webkit-transform: translateY(-30px);
-          transform: translateY(-30px);
+  transform: translateY(-30px);
 }
 
 .report-selector__container .report-selector-holder .header {
@@ -335,8 +330,8 @@ body.edit-mode .col-settings {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border-bottom: 1px dashed #4e4e4e;
   padding-bottom: 3px;
   margin-bottom: 13px;
@@ -362,16 +357,16 @@ body.edit-mode .col-settings {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-top: 50px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .report-selector__container .report-selector-holder .grid-selector button {
@@ -392,4 +387,15 @@ body.edit-mode .col-settings {
 .report-selector-value {
   margin-top: 15px;
 }
+
+div[data-box-id] {
+  background: url("https://www.oracle.com/a/ocom/img/dc/tb/icn-tb-d-bus-analytics-400.png");
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
 /*# sourceMappingURL=styles.css.map */

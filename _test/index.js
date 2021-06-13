@@ -12,55 +12,55 @@ app.use(bodyParser());
 app.use("/public", express.static("public"));
 
 app.get("/list", (req, res) => {
-	res.json([
-		{
-			id: 1,
-			title: "گزارشات اصلی",
-		},
-		{
-			id: 2,
-			title: "گزارشات مهم",
-		},
-		{
-			id: 3,
-			title: "گزارشات بزرگ",
-		},
-		{
-			id: 4,
-			title: "گزارشات کوچک",
-		},
-	]);
+  res.json([
+    {
+      id: 1,
+      title: "Main Reports",
+    },
+    {
+      id: 2,
+      title: "Primary Reports",
+    },
+    {
+      id: 3,
+      title: "Small Reports",
+    },
+    {
+      id: 4,
+      title: "Big Reports",
+    },
+  ]);
 });
 
 app.get("/getReports/:groupId", (req, res) => {
-	res.json([
-		{
-			id: 12,
-			title: "گزارشات ساعتی",
-		},
-		{
-			id: 24,
-			title: "گزارشات روزانه",
-		},
-		{
-			id: 31,
-			title: "گزارشات هفتگی",
-		},
-		{
-			id: 42,
-			title: "گزارشات ماهیانه",
-		},
-	]);
+  res.json([
+    {
+      id: 12,
+      title: "Hourly Reports",
+    },
+    {
+      id: 24,
+      title: "Weekly Reports ",
+    },
+    {
+      id: 31,
+      title: "Daily Reports ",
+    },
+    {
+      id: 42,
+      title: "Monthly Reports ",
+    },
+  ]);
 });
 
 app.post("/save", (req, res) => {
-	res.sendStatus(200);
+  res.sendStatus(200);
 });
 
 app.use(function (req, res, next) {
-	res.status(404).send("Sorry can't find that!");
+  res.status(404).send("Sorry can't find that!");
 });
 
 app.listen(9000, () => {
-	console.log("App Started on port 9000");
+  console.log("App Started on port 9000");
 });
